@@ -1,10 +1,16 @@
 package hoidanit;
 
+import java.util.Scanner;
+
 public class HelloWolrd {
+
 	public static void main(String[] args) {
-		String name = "Nguyễn Xuân Thiên";
-		int age = 24;
-		System.out.printf("My name is: " + name + ","); // print on old line
-		System.out.println(" age " + age); // print new line
+		Scanner scanner = new Scanner(System.in);
+		System.out.printf("Your name is: ");
+		String name = scanner.nextLine();
+		System.out.printf("Your age: ");
+		int age = scanner.nextInt();
+		System.out.println("My name is: " + name + ", age: " + age);
+		scanner.close();
 	}
 }
