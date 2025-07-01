@@ -9,7 +9,8 @@ public class Bai03 {
 		System.out.printf("Độ dài 1 cạnh của khối lập phương: ");
 		float canh = scanner.nextFloat();
 
-		System.out.println("Thể tích của khối lập phương: " + Math.pow(canh, 3));
+		double TheTich = Math.pow(canh, 3);
+		System.out.println("Thể tích của khối lập phương: " + TheTich);
 
 		scanner.close();
 	}
