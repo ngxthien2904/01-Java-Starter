@@ -5,12 +5,23 @@ import java.util.Scanner;
 public class HelloWolrd {
 
 	public static void main(String[] args) {
+
+//		int a = 6;
+//		int b = 9;
+//		int c = Math.max(a, b);
+//		System.out.println("Max = " + c);
+
 		Scanner scanner = new Scanner(System.in);
-		System.out.printf("Your name is: ");
-		String name = scanner.nextLine();
-		System.out.printf("Your age: ");
-		int age = scanner.nextInt();
-		System.out.println("My name is: " + name + ", age: " + age);
+
+		System.out.printf("First number = ");
+		int firstNumber = scanner.nextInt();
+
+		System.out.printf("Second number = ");
+		int secondNumber = scanner.nextInt();
+
+		System.out.println("Min = " + Math.min(firstNumber, secondNumber));
+
 		scanner.close();
+
 	}
 }
