@@ -41,7 +41,15 @@ public class Bai04 {
 		System.out.printf("Giải phương trình bậc hai %dx^2 + %dx + %d = 0 \n", a, b, c);
 
 		if (a == 0) {
-			giaiPhuongTrinhBacNhat();
+			if (b == 0 && c == 0) {
+				System.out.println("Phương trình vô số nghiệm");
+			} else if (b == 0 && c != 0) {
+				System.out.println("Phương trình vô nghiệm");
+			} else {
+				float x = (float) -c / b;
+				System.out.printf("Phương trình có nghiệm x = %.3f", x);
+			}
+
 		} else {
 			int delta = b * b - 4 * a * c;
 
@@ -55,9 +63,7 @@ public class Bai04 {
 				double x2 = ((-b - Math.sqrt(delta)) / (2 * a));
 				System.out.printf("Phương trình có 2 nghiệm là x1 = %.3f và x2 = %.3f", x1, x2);
 			}
-
 		}
-
 		scanner.close();
 
 	}
@@ -75,7 +81,6 @@ public class Bai04 {
 			int x = a * 1000 + (a - 100) * 1500;
 			System.out.println("Số tiền điện: " + x);
 		}
-
 		scanner.close();
 	}
 
