@@ -3,7 +3,16 @@ package lab02;
 import java.util.Scanner;
 
 public class Bai04 {
-	public static void giaiPhuongTrinhBacNhat(int a, int b) {
+
+	public static void giaiPhuongTrinhBacNhat() {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("a = ");
+		int a = scanner.nextInt();
+
+		System.out.print("b = ");
+		int b = scanner.nextInt();
+
 		System.out.printf("Giải phương trình bậc nhất %dx + %d = 0 \n", a, b);
 
 		if (a == 0 && b == 0) {
@@ -14,12 +23,25 @@ public class Bai04 {
 			float x = (float) -b / a;
 			System.out.printf("Phương trình có nghiệm x = %.3f", x);
 		}
+		scanner.close();
 	}
 
-	public static void giaiPhuongTrinhBacHai(int a, int b, int c) {
+	public static void giaiPhuongTrinhBacHai() {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("a = ");
+		int a = scanner.nextInt();
+
+		System.out.print("b = ");
+		int b = scanner.nextInt();
+
+		System.out.print("c = ");
+		int c = scanner.nextInt();
+
 		System.out.printf("Giải phương trình bậc hai %dx^2 + %dx + %d = 0 \n", a, b, c);
+
 		if (a == 0) {
-			giaiPhuongTrinhBacNhat(b, c);
+			giaiPhuongTrinhBacNhat();
 		} else {
 			int delta = b * b - 4 * a * c;
 
@@ -36,9 +58,16 @@ public class Bai04 {
 
 		}
 
+		scanner.close();
+
 	}
 
-	public static void tinhTienDien(int a) {
+	public static void tinhTienDien() {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Nhập số điện: ");
+		int a = scanner.nextInt();
+
 		if (0 <= a && a <= 100) {
 			int x = a * 1000;
 			System.out.println("Số tiền điện: " + x);
@@ -46,6 +75,8 @@ public class Bai04 {
 			int x = a * 1000 + (a - 100) * 1500;
 			System.out.println("Số tiền điện: " + x);
 		}
+
+		scanner.close();
 	}
 
 	public static void main(String[] args) {
@@ -62,38 +93,56 @@ public class Bai04 {
 		System.out.printf("Nhập lựa chọn: ");
 		int t = scanner.nextInt();
 
-		if (t == 1) {
+		switch (t) {
+		case 1:
 			System.out.println("Giải phương trình bậc nhất");
-
-			System.out.print("a = ");
-			int a = scanner.nextInt();
-			System.out.print("b = ");
-			int b = scanner.nextInt();
-
-			giaiPhuongTrinhBacNhat(a, b);
-		} else if (t == 2) {
+			giaiPhuongTrinhBacNhat();
+			break;
+		case 2:
 			System.out.println("Giải phương trình bậc hai");
-
-			System.out.print("a = ");
-			int a = scanner.nextInt();
-
-			System.out.print("b = ");
-			int b = scanner.nextInt();
-
-			System.out.print("c = ");
-			int c = scanner.nextInt();
-
-			giaiPhuongTrinhBacHai(a, b, c);
-		} else if (t == 3) {
+			giaiPhuongTrinhBacHai();
+			break;
+		case 3:
 			System.out.println("Tính tiền điện");
-
-			System.out.print("Nhập số điện: ");
-			int a = scanner.nextInt();
-
-			tinhTienDien(a);
-		} else {
-			System.out.println("Kết thúc");
+			tinhTienDien();
+			break;
+		default:
+			System.out.println("Đã thoát chương trình");
+			System.exit(0);
 		}
+
+//		if (t == 1) {
+//			System.out.println("Giải phương trình bậc nhất");
+//
+//			System.out.print("a = ");
+//			int a = scanner.nextInt();
+//			System.out.print("b = ");
+//			int b = scanner.nextInt();
+//
+//			giaiPhuongTrinhBacNhat(a, b);
+//		} else if (t == 2) {
+//			System.out.println("Giải phương trình bậc hai");
+//
+//			System.out.print("a = ");
+//			int a = scanner.nextInt();
+//
+//			System.out.print("b = ");
+//			int b = scanner.nextInt();
+//
+//			System.out.print("c = ");
+//			int c = scanner.nextInt();
+//
+//			giaiPhuongTrinhBacHai(a, b, c);
+//		} else if (t == 3) {
+//			System.out.println("Tính tiền điện");
+//
+//			System.out.print("Nhập số điện: ");
+//			int a = scanner.nextInt();
+//
+//			tinhTienDien(a);
+//		} else {
+//			System.out.println("Kết thúc");
+//		}
 		scanner.close();
 	}
 
