@@ -17,16 +17,18 @@ public class Bai01 {
 		}
 
 		int count = 0;
-		for (int i = 1; i <= a; i++) {
+		for (int i = 2; i <= a; i++) {
 			if (a % i == 0) {
+				System.out.println("Ước số khác:" + i);
 				count++;
+				break;
 			}
 		}
 
-		if (count == 2) {
-			System.out.println("a là số nguyên tố");
+		if (count == 0) {
+			System.out.printf("%d là số nguyên tố", a);
 		} else {
-			System.out.println("a không là số nguyên tố");
+			System.out.printf("%d không là số nguyên tố", a);
 		}
 	}
 }
