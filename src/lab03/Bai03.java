@@ -20,33 +20,55 @@ public class Bai03 {
 		System.out.println("Mảng đã nhập là: " + Arrays.toString(numbers));
 
 // - Sắp xếp các phần tử
-		for (int i = 0; i < numbers.length - 1; i++) {
-			for (int j = i + 1; j < numbers.length; j++) {
-				if (numbers[i] < numbers[j]) {
-					int temp = numbers[i];
-					numbers[i] = numbers[j];
-					numbers[j] = temp;
-				}
-			}
-		}
+		// Cach 1
+//		for (int i = 0; i < numbers.length - 1; i++) {
+//			for (int j = i + 1; j < numbers.length; j++) {
+//				if (numbers[i] < numbers[j]) {
+//					int temp = numbers[i];
+//					numbers[i] = numbers[j];
+//					numbers[j] = temp;
+//				}
+//			}
+//		}
+
+		// Cach 2
+		Arrays.sort(numbers);
 		System.out.println("Mảng sau khi sắp xếp là: " + Arrays.toString(numbers));
 
 // - Xuất phần tử có giá trị nhỏ nhất và lớn nhất
-		int minNumber = numbers[0];
-		for (int i = 0; i < numbers.length; i++) {
-			if (minNumber > numbers[i]) {
-				minNumber = numbers[i];
-			}
-		}
-		System.out.println("min: " + minNumber);
+		// Cach 1
+//		int minNumber = numbers[0];
+//		for (int i = 0; i < numbers.length; i++) {
+//			if (minNumber > numbers[i]) {
+//				minNumber = numbers[i];
+//			}
+//		}
+//		System.out.println("min: " + minNumber);
+//
+//		int maxNumber = numbers[0];
+//		for (int i = 0; i < numbers.length; i++) {
+//			if (maxNumber < numbers[i]) {
+//				maxNumber = numbers[i];
+//			}
+//		}
+//		System.out.println("max: " + maxNumber);
 
-		int maxNumber = numbers[0];
+		// Cach 2:
+//		System.out.println("max = " + numbers[numbers.length - 1]);
+//		System.out.println("min = " + numbers[0]);
+
+		// Cach 3
+		int max = numbers[0];
 		for (int i = 0; i < numbers.length; i++) {
-			if (maxNumber < numbers[i]) {
-				maxNumber = numbers[i];
-			}
+			max = Math.max(max, numbers[i]);
 		}
-		System.out.println("max: " + maxNumber);
+		System.out.println("Max = " + max);
+
+		int min = numbers[0];
+		for (int i = 0; i < numbers.length; i++) {
+			min = Math.min(min, numbers[i]);
+		}
+		System.out.println("Min = " + min);
 
 	}
 }
