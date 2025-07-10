@@ -3,7 +3,8 @@ package Oop_class;
 public class Student {
 	// class attributes
 	String name; // this.name
-	int age; // this.age
+	int age; // this.age // default: Là public với class trong cùng package, private khi khác
+				// package
 
 	public Student() {
 
