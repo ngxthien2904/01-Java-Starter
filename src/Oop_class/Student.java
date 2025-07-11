@@ -2,32 +2,32 @@ package Oop_class;
 
 public class Student {
 	// class attributes
-	String name; // this.name
-	int age; // this.age // default: Là public với class trong cùng package, private khi khác
-				// package
+	private String name; // this.name
+	private int age; // this.age
 
 	public Student() {
 
 	}
 
 	// Function overloading
-	public Student(String name1, int age1) {
-		this.name = name1;
-		this.age = age1;
-
+	public Student(String name, int age) {
+		this.name = name;
+		this.age = age;
 	}
 
-	// class method (class function)
-	public void learnJava() {
-		System.out.println("??");
+	public String getName() { // get: để lấy giá trị private ánh xạ ra bên ngoài class
+		return this.name;
 	}
 
-	// Function overloading
-//	public void learnJava(int a) {
-//		System.out.println("??");
-//	}
+	public int getAge() {
+		return this.age;
+	}
 
-	int getAge() {
-		return 25;
+	public void setName(String name) { // set: để cập nhật lại giá trị private
+		this.name = name;
+	}
+
+	public void setAge(int age) { // set: để cập nhật lại giá trị private
+		this.age = age;
 	}
 }
